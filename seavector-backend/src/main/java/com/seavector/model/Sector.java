@@ -1,6 +1,6 @@
 package com.seavector.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "SECTORES")
@@ -17,7 +17,6 @@ public class Sector {
     private Double coeficienteC;
     private Double coeficienteD;
 
-    // Constructores
     public Sector() {}
 
     public Sector(String nombre, Double coeficienteA, Double coeficienteB, Double coeficienteC, Double coeficienteD) {

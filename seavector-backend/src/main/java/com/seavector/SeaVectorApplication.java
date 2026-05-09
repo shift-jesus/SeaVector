@@ -9,4 +9,5 @@ public class SeaVectorApplication {
     public static void main(String[] args) {
         SpringApplication.run(SeaVectorApplication.class, args);
     }
+
 }
