@@ -23,6 +23,7 @@
     </properties>
 
     <dependencies>
+        <!-- Dependencias sin cambios -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -48,6 +49,16 @@
     </dependencies>
 
     <build>
+        <!-- =================================================================== -->
+        <!--  SOLUCIÓN FINAL: DESACTIVAR EL FILTRADO DE RECURSOS POR COMPLETO      -->
+        <!-- =================================================================== -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering> <!-- ¡LA DIRECTIVA CLAVE! -->
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -59,25 +70,15 @@
                 <configuration>
                     <source>25</source>
                     <target>25</target>
-                    <!-- Forzar codificación también en el compilador -->
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
-                <configuration>
-                    <!-- Forzar codificación directamente en el plugin de recursos -->
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
+            <!-- No se necesita configurar el maven-resources-plugin si el filtrado está desactivado -->
         </plugins>
-        <!-- La sección de <resources> se elimina porque la configuración por defecto es suficiente
-             cuando la codificación del plugin está bien definida. Esto simplifica el pom. -->
     </build>
 
     <repositories>
+        <!-- Repositorios sin cambios -->
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>

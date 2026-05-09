@@ -1,0 +1,8 @@
+com\seavector\controller\ErosionController.class
+com\seavector\dto\DataPoint.class
+com\seavector\dto\SensitivityResult.class
+com\seavector\SeaVectorApplication.class
+com\seavector\repository\SectorRepository.class
+com\seavector\service\ErosionService.class
+com\seavector\model\Sector.class
+com\seavector\dto\TangentPlane.class
