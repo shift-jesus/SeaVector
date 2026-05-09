@@ -1,0 +1,20 @@
+# Dependencias de Node
+node_modules/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Base de datos local
+*.db
+*.sqlite
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.iml
+
+# Builds
+dist/
+build/
+.DS_Store
