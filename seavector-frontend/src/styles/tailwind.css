@@ -2,30 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #020617;
-    font-family: 'Inter', sans-serif;
+    background: #0a0c12;
+    font-family: 'Space Grotesk', monospace;
+    overflow-x: hidden;
+    color: #ffffff;
 }
 
-.bg-ocean-deep {
-    background-color: #020617;
-}
-
-.font-mono {
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.radial-gradient {
-    background-image: radial-gradient(circle at center, #020617, #000000);
-}
-
+/* Grid futurista animada */
 .grid-pattern {
     background-image:
-        linear-gradient(rgba(0, 183, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 183, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+        linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 30s linear infinite;
 }
 
-.neon-border {
-    box-shadow: 0 0 5px rgba(0, 183, 255, 0.8), 0 0 10px rgba(0, 183, 255, 0.6), 0 0 15px rgba(0, 183, 255, 0.4);
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(60px, 60px); }
+}
+
+/* Efecto glassmorphism premium */
+.glass-premium {
+    background: rgba(10, 20, 35, 0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 28px;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.glass-premium:hover {
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+    background: rgba(15, 30, 50, 0.55);
+}
+
+/* Botón sci-fi */
+.btn-scifi {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15) 0%, rgba(0, 100, 255, 0.1) 100%);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 40px;
+    padding: 10px 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.btn-scifi:hover {
+    background: rgba(0, 255, 255, 0.25);
+    border-color: #0ff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* Slider personalizado */
+input[type="range"] {
+    -webkit-appearance: none;
+    background: rgba(0, 255, 255, 0.15);
+    border-radius: 10px;
+    height: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #0ff;
+    cursor: pointer;
+    box-shadow: 0 0 12px #0ff;
+    border: none;
+}
+
+/* Efecto de brillo */
+.neon-glow {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Scrollbar moderna */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0c12;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0ff;
+    border-radius: 10px;
+}
+
+/* Gradientes de fondo */
+.bg-gradient-deep {
+    background: radial-gradient(circle at 20% 30%, #0a1428, #020408);
 }
