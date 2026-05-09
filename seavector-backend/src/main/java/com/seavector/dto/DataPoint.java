@@ -15,7 +15,6 @@ public class DataPoint {
         this.gradY = gradY;
     }
 
-    // Getters (necesarios para JSON)
     public double getX() { return x; }
     public double getY() { return y; }
     public double getZ() { return z; }

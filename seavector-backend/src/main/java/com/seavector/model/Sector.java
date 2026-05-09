@@ -3,20 +3,29 @@ package com.seavector.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "SECTORES")
+@Table(name = "SECTORES") // Asegura que el nombre de la tabla es correcto
 public class Sector {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
 
+    @Column(name = "coeficiente_a", nullable = false)
     private Double coeficienteA;
+
+    @Column(name = "coeficiente_b", nullable = false)
     private Double coeficienteB;
+
+    @Column(name = "coeficiente_c", nullable = false)
     private Double coeficienteC;
+
+    @Column(name = "coeficiente_d", nullable = false)
     private Double coeficienteD;
 
+    // Constructores, Getters y Setters (sin cambios)
     public Sector() {}
 
     public Sector(String nombre, Double coeficienteA, Double coeficienteB, Double coeficienteC, Double coeficienteD) {
@@ -27,7 +36,6 @@ public class Sector {
         this.coeficienteD = coeficienteD;
     }
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getNombre() { return nombre; }
